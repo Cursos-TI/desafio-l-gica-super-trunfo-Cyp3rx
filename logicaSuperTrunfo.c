@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+
+
+
 int main() {
     char estado1 ,estado2;
     char codigo1[5],codigo2[5];
@@ -40,7 +43,7 @@ int main() {
     scanf(" %[^\n]", nome1);
 
     printf("Digite o número de habitantes da cidade: \n");
-    scanf("%ld%*c", &populacao1);
+    scanf("%lu%*c", &populacao1);
 
     printf("Digite a área (em km²) da cidade em quilômetros quadrados: \n");
     scanf("%f", &area1);
@@ -68,7 +71,7 @@ int main() {
     scanf(" %[^\n]", nome2);
 
     printf("Digite o número de habitantes da cidade: \n");
-    scanf("%ld", &populacao2);
+    scanf("%lu", &populacao2);
 
     printf("Digite a área (em km²) da cidade em quilômetros quadrados: \n");
     scanf("%f", &area2);
@@ -106,7 +109,7 @@ int main() {
     printf("Estado: %c \n",estado1);
     printf("Código: %s \n",codigo1);
     printf("Nome da Cidade: %s \n" ,nome1);
-    printf("População: %ld \n" ,populacao1);
+    printf("População: %lu \n" ,populacao1);
     printf("Área: %.2f km² \n" ,area1);
     printf("PIB: %.2f Bilhões de reais \n" ,pib1);
     printf("Número de Pontos Turísticos: %d \n" ,pontos1);
@@ -121,118 +124,272 @@ int main() {
     printf("Estado: %c \n",estado2);
     printf("Código: %s \n",codigo2);
     printf("Nome da Cidade: %s \n" ,nome2);
-    printf("População: %ld \n" ,populacao2);
+    printf("População: %lu \n" ,populacao2);
     printf("Área: %.2f km² \n" ,area2);
     printf("PIB: %.2f Bilhões de reais \n" ,pib2);
     printf("Número de Pontos Turísticos: %d \n" ,pontos2);
     printf("Densidade Populacional: %.2f hab/km² \n", densidade2);
-    printf("PIB per Capta: %.2f reais \n", capta2);
+    printf("PIB Per Capta: %.2f reais \n", capta2);
     printf("Super Poder: %.5f \n", superPoder2);
     printf("\n");
     printf("\n");
 
-    //escolher a carta vencedora da comparação escolhi a população 
 
-
-    printf("Escolha o atributo para comparação\n");
     
+
+    int escolha_de_atributos1, escolha_de_atributos2;
+
+    int resultado1, resultado2;
+
+    //menu de comparação.
+
+    printf("\n*** Comparação das Cartas ***\n");
+    printf("Escolha Dois Atributos para Comparar\n");
     printf("1. População\n");
-   
     printf("2. Área\n");
-   
     printf("3. PIB\n");
+    printf("4. Pontos Turísticos\n");
+    printf("5. Densidade Demográfica\n");
+    printf("6. PIB Per Capita\n");
+    printf("7. Super Poder\n");
+
+    printf("Escolha o primeiro Atributo: ");
+    scanf("%d", &escolha_de_atributos1);
+
+    // Exibindo o menu novamente sem a opção já escolhida
+    printf("\nEscolha o segundo Atributo (exceto o %d):\n", escolha_de_atributos1);
+
+    if (escolha_de_atributos1 != 1) printf("1. População\n");
+    if (escolha_de_atributos1 != 2) printf("2. Área\n");
+    if (escolha_de_atributos1 != 3) printf("3. PIB\n");
+    if (escolha_de_atributos1 != 4) printf("4. Pontos Turísticos\n");
+    if (escolha_de_atributos1 != 5) printf("5. Densidade Demográfica\n");
+    if (escolha_de_atributos1 != 6) printf("6. PIB Per Capita\n");
+    if (escolha_de_atributos1 != 7) printf("7. Super Poder\n");
+
+    printf("Escolha o segundo Atributo: ");
+    scanf("%d", &escolha_de_atributos2);
+
+
     
-    printf("4. Número de pontos turísticos\n");
-
-    printf("5. Densidade demográfica\n");
-    
-    printf("Escolha uma das opções: \n");
-    scanf("%d", &escolhajogador);
 
 
-    switch (escolhajogador){
+    switch (escolha_de_atributos1){
     case 1:
-        if(populacao1 > populacao2){
-            printf("Carta 1 - %s (%c):%lu \n", nome1, codigo1, populacao1);
-            printf("Carta 2 - %s (%c):%lu \n", nome2, estado2, populacao2);
+        printf("Voce escolheu o Atributo POPULAÇÃO.");
+        printf("A população da carta 1 (%s) é de : %lu \n", nome1, populacao1);
+        printf("A população da carta 2 (%s) é de : %lu \n", nome2, populacao2);
 
-            printf("Carta 1 %s Venceu!\n", nome1);
-    }else if(populacao1 == populacao2){
-
-        printf("O jogo empatou!");
-
-    }else {
-            printf("Carta 2 %s Venceu!\n", nome2);
-    }
-    break;
+        if (populacao1 > populacao2){
+            printf("Carta 1 (%s) teve uma população maior que a carta 2 (%s)\n", nome1, nome2);
+        }else if (populacao1 == populacao2){ 
+            printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma quantidade de habitantes.", nome1, nome2);
+        }else {
+            printf("Carta 2 (%s) teve uma população maior que a carta 1 (%s)\n", nome2, nome1);
+        }
+        
+        
+        break;
 
     case 2:
-    if(area1 > area2){
-        printf("Carta 1 - %s (%c):%lu \n", nome1, codigo1, area1);
-        printf("Carta 2 - %s (%c):%lu \n", nome2, estado2, area2);
+        printf("Voce escolheu o Atributo AREA.");
+        printf("A area da carta 1 (%s) é de : %f \n", nome1, area1);
+        printf("A area da carta 2 (%s) é de : %f \n", nome2, area2);
 
-        printf("Carta 1 %s Venceu!\n", nome1);
-    }else if(area1 == area2){
-
-        printf("O jogo empatou!");
+        if (area1 > area2){
+            printf("Carta 1 (%s) teve uma area maior que a carta 2 (%s)\n", nome1, nome2);
+        }else if (area1 == area2){ 
+            printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma area.", nome1, nome2);
+        }else {
+            printf("Carta 2 (%s) teve uma area maior que a carta 1 (%s)\n", nome2, nome1);
+        }    
+        break;
         
-    }else {
-        printf("Carta 2 %s Venceu!\n", nome2);
-    }  
-    break;
-
     case 3:
-    if(pib1 > pib2){
-        printf("Carta 1 - %s (%c):%lu \n", nome1, codigo1, pib1);
-        printf("Carta 2 - %s (%c):%lu \n", nome2, estado2, pib2);
+        printf("Voce escolheu o Atributo PIB.");
+        printf("A area da carta 1 (%s) é de : %f \n", nome1, pib1);
+        printf("A area da carta 2 (%s) é de : %f \n", nome2, pib2);
 
-        printf("Carta 1 %s Venceu!\n", nome1);
-    }else if(pib1 == pib2){
-
-        printf("O jogo empatou!");
-        
-    }else {
-        printf("Carta 2 %s Venceu!\n", nome2);
-    }  
-    break;
+        if (pib1 > pib2){
+            printf("Carta 1 (%s) teve uma area maior que a carta 2 (%s)\n", nome1, nome2);
+        }else if (pib1 == pib2){ 
+            printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma area.", nome1, nome2);
+        }else {
+            printf("Carta 2 (%s) teve uma area maior que a carta 1 (%s)\n", nome2, nome1);
+        }    
+     break;        
 
     case 4:
-    if(pontos1 > pontos2){
-        printf("Carta 1 - %s (%c):%lu \n", nome1, codigo1, pontos1);
-        printf("Carta 2 - %s (%c):%lu \n", nome2, estado2, pontos2);
-
-        printf("Carta 1 %s Venceu!\n", nome1);
-    }else if(pontos1 == pontos2){
-
-        printf("O jogo empatou!");
-        
-    }else {
-        printf("Carta 2 %s Venceu!\n", nome2);
-    }  
-    break;
+       printf("Voce escolheu o Atributo PONTOS TURISTICOS.");
+       printf("A quantidade de pontos Turistiscos da carta 1 (%s) é de : %d \n", nome1, pontos1);
+       printf("A quantidade de pontos Turistiscos da carta 2 (%s) é de : %d \n", nome2, pontos2);
+    
+       if (pontos1 > pontos2){
+           printf("Carta 1 (%s) teve mais pontos turisticos que a carta 2 (%s)\n", nome1, nome2);
+       }else if (pontos1 == pontos2){ 
+           printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma quantidade de Pontos Turistiscos.", nome1, nome2);
+       }else {
+           printf("Carta 2 (%s) teve mais pontos turisticos que a carta 1 (%s)\n", nome2, nome1);
+       }
+        break; 
 
     case 5:
-    if(densidade1 < densidade2){
-        printf("Carta 1 - %s (%c):%lu \n", nome1, codigo1, densidade1);
-        printf("Carta 2 - %s (%c):%lu \n", nome2, estado2, densidade2);
+       printf("Voce escolheu o Atributo DENSIDADE DEMORGRAFICA.");
+       printf("A densidade da carta 1 (%s) é de : %f \n", nome1, densidade1);
+       printf("A densidade da carta 2 (%s) é de : %f \n", nome2, densidade2);
+     
+       if (densidade2 > densidade1){
+           printf("Carta 1 (%s) teve menor densidade que a carta 2 (%s)\n", nome1, nome2);
+       }else if (densidade1 == densidade2){ 
+           printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma densidade.", nome1, nome2);
+       }else {
+           printf("Carta 2 (%s) teve menor densiadade que a carta 1 (%s)\n", nome2, nome1);
+       }
+        break;
 
-        printf("Carta 1 %s Venceu!\n", nome1);
-    }else if(densidade1 == densidade2){
+    case 6:
+       printf("Voce escolheu o Atributo PIB PER CAPITA.");
+       printf("O PIB Per Capita da carta 1 (%s) é de : %d \n", nome1, capta1);
+       printf("O PIB Per Capita da carta 2 (%s) é de : %d \n", nome2, capta2);
+    
+       if (capta1 > capta2){
+           printf("Carta 1 (%s) teve maior PIB Per Capita que a carta 2 (%s)\n", nome1, nome2);
+       }else if (capta1 == capta2){ 
+           printf("A carta 1 (%s) e a carta 2 (%s) possuem o mesmo PIB Per Capita.", nome1, nome2);
+       }else {
+           printf("Carta 2 (%s) teve maior PIB Per Capita que a carta 1 (%s)\n", nome2, nome1);
+       }
+        break;
 
-        printf("O jogo empatou!");
-        
-    }else {
-        printf("Carta 2 %s Venceu!\n", nome2);
-    }  
-    break;
+    case 7:
+       printf("Voce escolheu o Atributo PIB PER CAPITA.");
+       printf("O PIB Per Capita da carta 1 (%s) é de : %d \n", nome1, capta1);
+       printf("O PIB Per Capita da carta 2 (%s) é de : %d \n", nome2, capta2);
+     
+       if (superPoder1 > superPoder2){
+           printf("Carta 1 (%s) teve maior PIB Per Capita que a carta 2 (%s)\n", nome1, nome2);
+       }else if (superPoder1 == superPoder2){ 
+           printf("A carta 1 (%s) e a carta 2 (%s) possuem o mesmo PIB Per Capita.", nome1, nome2);
+       }else {
+           printf("Carta 2 (%s) teve maior PIB Per Capita que a carta 1 (%s)\n", nome2, nome1);
+       }
+        break;
 
 
     default:
 
-    printf("Opção invalida!");
-
-    break;
+    printf("Opção Invalida !");
+        break;
     }
+
+    switch (escolha_de_atributos2){
+        case 1:
+            printf("Voce escolheu o Atributo POPULAÇÃO.");
+            printf("A população da carta 1 (%s) é de : %lu \n", nome1, populacao1);
+            printf("A população da carta 2 (%s) é de : %lu \n", nome2, populacao2);
+    
+            if (populacao1 > populacao2){
+                printf("Carta 1 (%s) teve uma população maior que a carta 2 (%s)\n", nome1, nome2);
+            }else if (populacao1 == populacao2){ 
+                printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma quantidade de habitantes.", nome1, nome2);
+            }else {
+                printf("Carta 2 (%s) teve uma população maior que a carta 1 (%s)\n", nome2, nome1);
+            }
+            
+            
+            break;
+    
+        case 2:
+            printf("Voce escolheu o Atributo AREA.");
+            printf("A area da carta 1 (%s) é de : %f \n", nome1, area1);
+            printf("A area da carta 2 (%s) é de : %f \n", nome2, area2);
+    
+            if (area1 > area2){
+                printf("Carta 1 (%s) teve uma area maior que a carta 2 (%s)\n", nome1, nome2);
+            }else if (area1 == area2){ 
+                printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma area.", nome1, nome2);
+            }else {
+                printf("Carta 2 (%s) teve uma area maior que a carta 1 (%s)\n", nome2, nome1);
+            }    
+            break;
+            
+        case 3:
+            printf("Voce escolheu o Atributo PIB.");
+            printf("A area da carta 1 (%s) é de : %f \n", nome1, pib1);
+            printf("A area da carta 2 (%s) é de : %f \n", nome2, pib2);
+    
+            if (pib1 > pib2){
+                printf("Carta 1 (%s) teve uma area maior que a carta 2 (%s)\n", nome1, nome2);
+            }else if (pib1 == pib2){ 
+                printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma area.", nome1, nome2);
+            }else {
+                printf("Carta 2 (%s) teve uma area maior que a carta 1 (%s)\n", nome2, nome1);
+            }    
+         break;        
+    
+        case 4:
+           printf("Voce escolheu o Atributo PONTOS TURISTICOS.");
+           printf("A quantidade de pontos Turistiscos da carta 1 (%s) é de : %d \n", nome1, pontos1);
+           printf("A quantidade de pontos Turistiscos da carta 2 (%s) é de : %d \n", nome2, pontos2);
+        
+           if (pontos1 > pontos2){
+               printf("Carta 1 (%s) teve mais pontos turisticos que a carta 2 (%s)\n", nome1, nome2);
+           }else if (pontos1 == pontos2){ 
+               printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma quantidade de Pontos Turistiscos.", nome1, nome2);
+           }else {
+               printf("Carta 2 (%s) teve mais pontos turisticos que a carta 1 (%s)\n", nome2, nome1);
+           }
+            break; 
+    
+        case 5:
+           printf("Voce escolheu o Atributo DENSIDADE DEMORGRAFICA.");
+           printf("A densidade da carta 1 (%s) é de : %f \n", nome1, densidade1);
+           printf("A densidade da carta 2 (%s) é de : %f \n", nome2, densidade2);
+         
+           if (densidade2 > densidade1){
+               printf("Carta 1 (%s) teve menor densidade que a carta 2 (%s)\n", nome1, nome2);
+           }else if (densidade1 == densidade2){ 
+               printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma densidade.", nome1, nome2);
+           }else {
+               printf("Carta 2 (%s) teve menor densiadade que a carta 1 (%s)\n", nome2, nome1);
+           }
+            break;
+    
+        case 6:
+           printf("Voce escolheu o Atributo PIB PER CAPITA.");
+           printf("O PIB Per Capita da carta 1 (%s) é de : %d \n", nome1, capta1);
+           printf("O PIB Per Capita da carta 2 (%s) é de : %d \n", nome2, capta2);
+        
+           if (capta1 > capta2){
+               printf("Carta 1 (%s) teve maior PIB Per Capita que a carta 2 (%s)\n", nome1, nome2);
+           }else if (capta1 == capta2){ 
+               printf("A carta 1 (%s) e a carta 2 (%s) possuem o mesmo PIB Per Capita.", nome1, nome2);
+           }else {
+               printf("Carta 2 (%s) teve maior PIB Per Capita que a carta 1 (%s)\n", nome2, nome1);
+           }
+            break;
+    
+        case 7:
+           printf("Voce escolheu o Atributo PIB PER CAPITA.");
+           printf("O PIB Per Capita da carta 1 (%s) é de : %d \n", nome1, capta1);
+           printf("O PIB Per Capita da carta 2 (%s) é de : %d \n", nome2, capta2);
+         
+           if (superPoder1 > superPoder2){
+               printf("Carta 1 (%s) teve maior PIB Per Capita que a carta 2 (%s)\n", nome1, nome2);
+           }else if (superPoder1 == superPoder2){ 
+               printf("A carta 1 (%s) e a carta 2 (%s) possuem o mesmo PIB Per Capita.", nome1, nome2);
+           }else {
+               printf("Carta 2 (%s) teve maior PIB Per Capita que a carta 1 (%s)\n", nome2, nome1);
+           }
+            break;
+    
+    
+        default:
+    
+        printf("Opção Invalida !");
+            break;
+        }
+
 
 
 
