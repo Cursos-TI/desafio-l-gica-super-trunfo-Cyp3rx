@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 
 
@@ -153,28 +154,105 @@ int main() {
     printf("6. PIB Per Capita\n");
     printf("7. Super Poder\n");
 
-    printf("Escolha o primeiro Atributo: ");
+    printf("Escolha o primeiro Atributo: \n");
     scanf("%d", &escolha_de_atributos1);
 
     // Exibindo o menu novamente sem a opção já escolhida
-    printf("\nEscolha o segundo Atributo (exceto o %d):\n", escolha_de_atributos1);
-
-    if (escolha_de_atributos1 != 1) printf("1. População\n");
-    if (escolha_de_atributos1 != 2) printf("2. Área\n");
-    if (escolha_de_atributos1 != 3) printf("3. PIB\n");
-    if (escolha_de_atributos1 != 4) printf("4. Pontos Turísticos\n");
-    if (escolha_de_atributos1 != 5) printf("5. Densidade Demográfica\n");
-    if (escolha_de_atributos1 != 6) printf("6. PIB Per Capita\n");
-    if (escolha_de_atributos1 != 7) printf("7. Super Poder\n");
+   if(escolha_de_atributos1 == 1){
+    printf("\nEscolha Dois Atributos para Comparar\n");
+    printf("1. População(Ja selecionado)\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Pontos Turísticos\n");
+    printf("5. Densidade Demográfica\n");
+    printf("6. PIB Per Capita\n");
+    printf("7. Super Poder\n");
 
     printf("Escolha o segundo Atributo: ");
     scanf("%d", &escolha_de_atributos2);
+   } else if (escolha_de_atributos1 == 2){
+    printf("Escolha Dois Atributos para Comparar\n");
+    printf("1. População\n");
+    printf("2. Área(Ja selecionado)\n");
+    printf("3. PIB\n");
+    printf("4. Pontos Turísticos\n");
+    printf("5. Densidade Demográfica\n");
+    printf("6. PIB Per Capita\n");
+    printf("7. Super Poder\n");
+
+    printf("Escolha o segundo Atributo: ");
+    scanf("%d", &escolha_de_atributos2);
+   } else if (escolha_de_atributos1 == 3){
+    printf("Escolha Dois Atributos para Comparar\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB(Ja selecionado)\n");
+    printf("4. Pontos Turísticos\n");
+    printf("5. Densidade Demográfica\n");
+    printf("6. PIB Per Capita\n");
+    printf("7. Super Poder\n");
+
+    printf("Escolha o segundo Atributo: ");
+    scanf("%d", &escolha_de_atributos2);
+   } else if (escolha_de_atributos1 == 4){
+    printf("Escolha Dois Atributos para Comparar\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Pontos Turísticos(Ja selecionado)\n");
+    printf("5. Densidade Demográfica\n");
+    printf("6. PIB Per Capita\n");
+    printf("7. Super Poder\n");
+
+    printf("Escolha o segundo Atributo: ");
+    scanf("%d", &escolha_de_atributos2);
+   } else if(escolha_de_atributos1 == 5){
+    printf("Escolha Dois Atributos para Comparar\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Pontos Turísticos\n");
+    printf("5. Densidade Demográfica (Ja selecionado)\n");
+    printf("6. PIB Per Capita\n");
+    printf("7. Super Poder\n");
+
+    printf("Escolha o segundo Atributo: ");
+    scanf("%d", &escolha_de_atributos2);
+   } else if(escolha_de_atributos1 == 6){
+    printf("Escolha Dois Atributos para Comparar\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Pontos Turísticos\n");
+    printf("5. Densidade Demográfica\n");
+    printf("6. PIB Per Capita(Ja selecionado)\n");
+    printf("7. Super Poder\n");
+
+    printf("Escolha o segundo Atributo: ");
+    scanf("%d", &escolha_de_atributos2);
+   }else if(escolha_de_atributos1 == 7){
+    printf("Escolha Dois Atributos para Comparar\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Pontos Turísticos\n");
+    printf("5. Densidade Demográfica\n");
+    printf("6. PIB Per Capita\n");
+    printf("7. Super Poder(Ja selecionado)\n");
+
+    printf("Escolha o segundo Atributo: ");
+    scanf("%d", &escolha_de_atributos2);
+   }else {
+    printf("opções invalidas");
+   }
+
+   
 
 
-    
 
-
-    switch (escolha_de_atributos1){
+    if(escolha_de_atributos1 == escolha_de_atributos2){
+        printf("\nNÃO ESCOLHA ATRIBUTOS IGUAIS !\n");
+    }else switch (escolha_de_atributos1){
     case 1:
         printf("Voce escolheu o Atributo POPULAÇÃO.");
         printf("A população da carta 1 (%s) é de : %lu \n", nome1, populacao1);
@@ -183,7 +261,7 @@ int main() {
         if (populacao1 > populacao2){
             printf("Carta 1 (%s) teve uma população maior que a carta 2 (%s)\n", nome1, nome2);
         }else if (populacao1 == populacao2){ 
-            printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma quantidade de habitantes.", nome1, nome2);
+            printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma quantidade de habitantes.\n", nome1, nome2);
         }else {
             printf("Carta 2 (%s) teve uma população maior que a carta 1 (%s)\n", nome2, nome1);
         }
@@ -199,7 +277,7 @@ int main() {
         if (area1 > area2){
             printf("Carta 1 (%s) teve uma area maior que a carta 2 (%s)\n", nome1, nome2);
         }else if (area1 == area2){ 
-            printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma area.", nome1, nome2);
+            printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma area.\n", nome1, nome2);
         }else {
             printf("Carta 2 (%s) teve uma area maior que a carta 1 (%s)\n", nome2, nome1);
         }    
@@ -213,7 +291,7 @@ int main() {
         if (pib1 > pib2){
             printf("Carta 1 (%s) teve uma area maior que a carta 2 (%s)\n", nome1, nome2);
         }else if (pib1 == pib2){ 
-            printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma area.", nome1, nome2);
+            printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma area.\n", nome1, nome2);
         }else {
             printf("Carta 2 (%s) teve uma area maior que a carta 1 (%s)\n", nome2, nome1);
         }    
@@ -227,7 +305,7 @@ int main() {
        if (pontos1 > pontos2){
            printf("Carta 1 (%s) teve mais pontos turisticos que a carta 2 (%s)\n", nome1, nome2);
        }else if (pontos1 == pontos2){ 
-           printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma quantidade de Pontos Turistiscos.", nome1, nome2);
+           printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma quantidade de Pontos Turistiscos.\n", nome1, nome2);
        }else {
            printf("Carta 2 (%s) teve mais pontos turisticos que a carta 1 (%s)\n", nome2, nome1);
        }
@@ -241,7 +319,7 @@ int main() {
        if (densidade2 > densidade1){
            printf("Carta 1 (%s) teve menor densidade que a carta 2 (%s)\n", nome1, nome2);
        }else if (densidade1 == densidade2){ 
-           printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma densidade.", nome1, nome2);
+           printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma densidade.\n", nome1, nome2);
        }else {
            printf("Carta 2 (%s) teve menor densiadade que a carta 1 (%s)\n", nome2, nome1);
        }
@@ -255,7 +333,7 @@ int main() {
        if (capta1 > capta2){
            printf("Carta 1 (%s) teve maior PIB Per Capita que a carta 2 (%s)\n", nome1, nome2);
        }else if (capta1 == capta2){ 
-           printf("A carta 1 (%s) e a carta 2 (%s) possuem o mesmo PIB Per Capita.", nome1, nome2);
+           printf("A carta 1 (%s) e a carta 2 (%s) possuem o mesmo PIB Per Capita.\n", nome1, nome2);
        }else {
            printf("Carta 2 (%s) teve maior PIB Per Capita que a carta 1 (%s)\n", nome2, nome1);
        }
@@ -269,7 +347,7 @@ int main() {
        if (superPoder1 > superPoder2){
            printf("Carta 1 (%s) teve maior PIB Per Capita que a carta 2 (%s)\n", nome1, nome2);
        }else if (superPoder1 == superPoder2){ 
-           printf("A carta 1 (%s) e a carta 2 (%s) possuem o mesmo PIB Per Capita.", nome1, nome2);
+           printf("A carta 1 (%s) e a carta 2 (%s) possuem o mesmo PIB Per Capita\n.", nome1, nome2);
        }else {
            printf("Carta 2 (%s) teve maior PIB Per Capita que a carta 1 (%s)\n", nome2, nome1);
        }
@@ -291,7 +369,7 @@ int main() {
             if (populacao1 > populacao2){
                 printf("Carta 1 (%s) teve uma população maior que a carta 2 (%s)\n", nome1, nome2);
             }else if (populacao1 == populacao2){ 
-                printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma quantidade de habitantes.", nome1, nome2);
+                printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma quantidade de habitantes.\n", nome1, nome2);
             }else {
                 printf("Carta 2 (%s) teve uma população maior que a carta 1 (%s)\n", nome2, nome1);
             }
@@ -307,7 +385,7 @@ int main() {
             if (area1 > area2){
                 printf("Carta 1 (%s) teve uma area maior que a carta 2 (%s)\n", nome1, nome2);
             }else if (area1 == area2){ 
-                printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma area.", nome1, nome2);
+                printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma area.\n", nome1, nome2);
             }else {
                 printf("Carta 2 (%s) teve uma area maior que a carta 1 (%s)\n", nome2, nome1);
             }    
@@ -321,7 +399,7 @@ int main() {
             if (pib1 > pib2){
                 printf("Carta 1 (%s) teve uma area maior que a carta 2 (%s)\n", nome1, nome2);
             }else if (pib1 == pib2){ 
-                printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma area.", nome1, nome2);
+                printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma area.\n", nome1, nome2);
             }else {
                 printf("Carta 2 (%s) teve uma area maior que a carta 1 (%s)\n", nome2, nome1);
             }    
@@ -335,7 +413,7 @@ int main() {
            if (pontos1 > pontos2){
                printf("Carta 1 (%s) teve mais pontos turisticos que a carta 2 (%s)\n", nome1, nome2);
            }else if (pontos1 == pontos2){ 
-               printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma quantidade de Pontos Turistiscos.", nome1, nome2);
+               printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma quantidade de Pontos Turistiscos.\n", nome1, nome2);
            }else {
                printf("Carta 2 (%s) teve mais pontos turisticos que a carta 1 (%s)\n", nome2, nome1);
            }
@@ -349,7 +427,7 @@ int main() {
            if (densidade2 > densidade1){
                printf("Carta 1 (%s) teve menor densidade que a carta 2 (%s)\n", nome1, nome2);
            }else if (densidade1 == densidade2){ 
-               printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma densidade.", nome1, nome2);
+               printf("A carta 1 (%s) e a carta 2 (%s) possuem a mesma densidade.\n", nome1, nome2);
            }else {
                printf("Carta 2 (%s) teve menor densiadade que a carta 1 (%s)\n", nome2, nome1);
            }
@@ -363,7 +441,7 @@ int main() {
            if (capta1 > capta2){
                printf("Carta 1 (%s) teve maior PIB Per Capita que a carta 2 (%s)\n", nome1, nome2);
            }else if (capta1 == capta2){ 
-               printf("A carta 1 (%s) e a carta 2 (%s) possuem o mesmo PIB Per Capita.", nome1, nome2);
+               printf("A carta 1 (%s) e a carta 2 (%s) possuem o mesmo PIB Per Capita.\n", nome1, nome2);
            }else {
                printf("Carta 2 (%s) teve maior PIB Per Capita que a carta 1 (%s)\n", nome2, nome1);
            }
@@ -377,20 +455,231 @@ int main() {
            if (superPoder1 > superPoder2){
                printf("Carta 1 (%s) teve maior PIB Per Capita que a carta 2 (%s)\n", nome1, nome2);
            }else if (superPoder1 == superPoder2){ 
-               printf("A carta 1 (%s) e a carta 2 (%s) possuem o mesmo PIB Per Capita.", nome1, nome2);
+               printf("A carta 1 (%s) e a carta 2 (%s) possuem o mesmo PIB Per Capita.\n", nome1, nome2);
            }else {
                printf("Carta 2 (%s) teve maior PIB Per Capita que a carta 1 (%s)\n", nome2, nome1);
            }
             break;
-    
-    
-        default:
-    
-        printf("Opção Invalida !");
+        default:    
+        printf("\nOpção Invalida !\n");
             break;
         }
 
 
+       //somando as variaveis
+       
+    unsigned long int resultado1, resultado2, resultado3, resultado4, resultado5, resultado6, resultado7, resultado8, resultado9, resultado10, resultado11, resultado12, resultado13, resultado14, resultado15, resultado16, resultado17, resultado18, resultado19, resultado20, resultado21, resultado22, resultado23, resultado24;   
+
+    if (escolha_de_atributos1 == 1 && escolha_de_atributos2 ==2){
+        
+        resultado1 = populacao1 + area1 ;
+        resultado2 = populacao2 + area2 ;
+
+        printf("\nA população de %s é %lu e a area %f.\n", nome1, populacao1, area1);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado1);
+
+
+        printf("\nA população de %s é %lu e a area %f.\n", nome2, populacao2, area2);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado2);
+
+
+        resultado1 > resultado2 ? printf("\nA cidade de %s venceu com a pontuação de: %lu \n", nome1,resultado1 ) : printf("\nA cidade de %s venceu com a pontuação de: %lu\n", nome2,resultado2 );
+
+
+
+
+    } else if(escolha_de_atributos1 == 1 && escolha_de_atributos2 == 3){
+
+        resultado3 = populacao1 + pib1;
+        resultado4 = populacao2 + pib2;
+
+
+        printf("\nA população de %s é %lu e o PIB %f.\n", nome1, populacao1, pib1);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado3);
+
+
+        printf("\nA população de %s é %lu e o PIB %f.\n", nome2, populacao2, pib2);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado4);
+
+
+        resultado3 > resultado4 ? printf("\nA cidade de %s venceu com a pontuação de: %lu\n", nome1,resultado3 ) : printf("A cidade de %s venceu com a pontuação de: %lu\n", nome2,resultado4 );
+    
+    }else if(escolha_de_atributos1 == 1 && escolha_de_atributos2 == 4){
+
+        resultado5 = populacao1 + pontos1;
+        resultado6 = populacao2 + pontos2;
+
+
+        printf("\nA população de %s é %lu e os Pontos Turistiscos %f.\n", nome1, populacao1, pontos1);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado5);
+
+
+        printf("\nA população de %s é %lu e os Pontos Turistiscos %f.\n", nome2, populacao2, pontos2);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado6);
+
+
+        resultado5 > resultado6 ? printf("A cidade de %s venceu com a pontuação de: %lu\n", nome1,resultado5 ) : printf("A cidade de %s venceu com a pontuação de: %lu\n", nome2,resultado6 );
+    
+    }else if (escolha_de_atributos1 == 1 && escolha_de_atributos2 == 5){
+
+        resultado7 = populacao1 + densidade1;
+        resultado8 = populacao2 + densidade2;
+
+
+        printf("\nA população de %s é %lu e a Densidade é de: %f.\n", nome1, populacao1, densidade1);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado7);
+
+
+        printf("\nA população de %s é %lu e a Densidade é de: %f.\n", nome2, populacao2, densidade2);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado8);
+
+
+        resultado7 < resultado8 ? printf("A cidade de %s venceu com a pontuação de: %lu\n", nome1,resultado7 ) : printf("A cidade de %s venceu com a pontuação de: %lu\n", nome2,resultado8 );
+    
+    }else if(escolha_de_atributos1 == 1 && escolha_de_atributos2 == 6){
+
+        resultado9 = populacao1 + capta1;
+        resultado10 = populacao2 + capta2;
+
+        printf("\nA população de %s é %lu e o PIB per Capita é de: %f.\n", nome1, populacao1, capta1);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado9);
+
+
+        printf("A população de %s é %lu e o PIB per Capita é de: %f.\n", nome2, populacao2, capta2);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado10);
+
+
+        resultado9 > resultado10 ? printf("A cidade de %s venceu com a pontuação de: %lu\n", nome1,resultado9 ) : printf("A cidade de %s venceu com a pontuação de: %lu\n", nome2,resultado10 );
+    
+
+    }else if(escolha_de_atributos1 == 1 && escolha_de_atributos2 == 7){
+
+        resultado11 = populacao1 + superPoder1;
+        resultado12 = populacao2 + superPoder2;
+
+        printf("\nA população de %s é %lu e o Super Poder é de: %f.\n", nome1, populacao1, superPoder1);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado9);
+
+
+        printf("\nA população de %s é %lu e o Super Poder é de: %f.\n", nome2, populacao2, superPoder2);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado10);
+
+
+        resultado11 > resultado12 ? printf("A cidade de %s venceu com a pontuação de: %lu\n", nome1,resultado11 ) : printf("A cidade de %s venceu com a pontuação de: %lu\n", nome2,resultado12 );
+    
+    }else if (escolha_de_atributos1 == 2 && escolha_de_atributos2 == 1){
+
+
+        resultado13 = populacao1 + area1 ;
+        resultado14 = populacao2 + area2 ;
+
+        printf("\nA população de %s é %lu e a area %f.\n", nome1, populacao1, area1);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado13);
+
+
+        printf("\nA população de %s é %lu e a area %f.\n", nome2, populacao2, area2);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado14);
+
+
+        resultado1 > resultado2 ? printf("\nA cidade de %s venceu com a pontuação de: %lu \n", nome1,resultado13 ) : printf("\nA cidade de %s venceu com a pontuação de: %lu\n", nome2,resultado14 );
+
+
+
+
+
+    }else if (escolha_de_atributos1 == 3 && escolha_de_atributos2 == 1){
+
+        resultado15 = populacao1 + pib1;
+        resultado16 = populacao2 + pib2;
+
+
+        printf("\nA população de %s é %lu e o PIB %f.\n", nome1, populacao1, pib1);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado15);
+
+
+        printf("\nA população de %s é %lu e o PIB %f.\n", nome2, populacao2, pib2);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado16);
+
+
+        resultado15 > resultado16 ? printf("\nA cidade de %s venceu com a pontuação de: %lu\n", nome1,resultado15 ) : printf("A cidade de %s venceu com a pontuação de: %lu\n", nome2,resultado16 );
+    
+
+
+
+
+    }else if (escolha_de_atributos1 == 4 && escolha_de_atributos2 == 1){
+
+        resultado17 = populacao1 + pontos1;
+        resultado18 = populacao2 + pontos2;
+
+
+        printf("\nA população de %s é %lu e os Pontos Turistiscos %f.\n", nome1, populacao1, pontos1);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado17);
+
+
+        printf("\nA população de %s é %lu e os Pontos Turistiscos %f.\n", nome2, populacao2, pontos2);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado18);
+
+
+        resultado17 > resultado18 ? printf("A cidade de %s venceu com a pontuação de: %lu\n", nome1,resultado17 ) : printf("A cidade de %s venceu com a pontuação de: %lu\n", nome2,resultado18 );
+    
+
+
+
+    }else if (escolha_de_atributos1 == 5 && escolha_de_atributos2 == 1){
+
+
+
+        resultado19 = populacao1 + densidade1;
+        resultado20 = populacao2 + densidade2;
+
+
+        printf("\nA população de %s é %lu e a Densidade é de: %f.\n", nome1, populacao1, densidade1);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado19);
+
+
+        printf("\nA população de %s é %lu e a Densidade é de: %f.\n", nome2, populacao2, densidade2);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado20);
+
+
+        resultado19 < resultado20 ? printf("A cidade de %s venceu com a pontuação de: %lu\n", nome1,resultado19 ) : printf("A cidade de %s venceu com a pontuação de: %lu\n", nome2,resultado20 );
+    
+
+    }else if (escolha_de_atributos1 == 6 && escolha_de_atributos2 == 1){
+
+
+        resultado21 = populacao1 + capta1;
+        resultado22 = populacao2 + capta2;
+
+        printf("\nA população de %s é %lu e o PIB per Capita é de: %f.\n", nome1, populacao1, capta1);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado21);
+
+
+        printf("\n\nA população de %s é %lu e o PIB per Capita é de: %f.\n", nome2, populacao2, capta2);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado22);
+
+
+        resultado21 > resultado22 ? printf("A cidade de %s venceu com a pontuação de: %lu\n", nome1,resultado21 ) : printf("A cidade de %s venceu com a pontuação de: %lu\n", nome2,resultado22 );
+    
+
+
+    }else if (escolha_de_atributos1 == 7 && escolha_de_atributos2 == 1){
+
+
+        resultado23 = populacao1 + superPoder1;
+        resultado24 = populacao2 + superPoder2;
+
+        printf("\nA população de %s é %lu e o Super Poder é de: %f.\n", nome1, populacao1, superPoder1);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado23);
+
+
+        printf("\nA população de %s é %lu e o Super Poder é de: %f.\n", nome2, populacao2, superPoder2);
+        printf("A soma dos dois atribuitos é: %lu \n",resultado24);
+
+
+        resultado23 > resultado24 ? printf("A cidade de %s venceu com a pontuação de: %lu\n", nome1,resultado23 ) : printf("A cidade de %s venceu com a pontuação de: %lu\n", nome2,resultado24 );
+    
+    }
 
 
 
